@@ -479,6 +479,28 @@ module Ampoule
       r
     end
     
+    class Upload < Ampoule::Model(:name, :filename, :data)
+      default(:filename) { rand(2**128).to_s }
+      def size
+        data ? data.size : 0
+      end
+    end
+    
+    def uploaded_files(param = "file[]")
+      r = request.query[param.to_s] || nil
+      if r
+        a = []
+        r.each_data do |d|
+          if d && d.size > 0
+            a << Upload.new(:name => d.name, :filename => d.filename, :data => d)
+          end
+        end
+        a
+      else
+        []
+      end
+    end
+    
     def get!
       response.body = get.to_s
     end
@@ -657,6 +679,18 @@ module Ampoule
                   form.appendChild(taskIdTag)
                   form.submit()
                 }
+                function addAnotherFileField(field)
+                {
+                  var parent = field.parentNode
+                  var newField = document.createElement("input")
+                  newField.setAttribute("type", "file")
+                  newField.setAttribute("name", field.getAttribute("name"))
+                  newField.setAttribute("onchange", field.getAttribute("onchange"))
+                  field.setAttribute("onchange", "")
+                  var br = document.createElement("br")
+                  parent.insertBefore(br, field.nextSibling)
+                  parent.insertBefore(newField, br)
+                }
               }
             end
             
@@ -811,9 +845,7 @@ module Ampoule
           end
           
           div :class => "upload panel" do
-            input :type => "file", :name => "file[]", :onchange => ""
-            br
-            input :type => "file", :name => "file[]"
+            input :type => "file", :name => "file[]", :onchange => "addAnotherFileField(this); return true"
           end
         end # form
         
@@ -826,7 +858,12 @@ module Ampoule
         self.current_user_name = current_person # remember new value
       end
       
-      p request.query
+      # uploaded_files.each do |f|
+      #   p [f.filename, f.size]
+      # end
+      # 
+      # redirect_to request.path
+      # return
       
       task.title = param(:title)
       task.priority = param(:priority)
@@ -1028,10 +1065,13 @@ module Ampoule
             end
           end
           
-          div ".upload" do
+          div ".panel.upload" do
             padding_top  1.em
+            margin_left  -1.px
+            overflow :visible
             font :size => 0.9.em
             input do
+              display :block
               margin_bottom 10.px
             end
           end
