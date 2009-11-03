@@ -1,10 +1,10 @@
 --- !ruby/struct:Ampoule::Task 
 title: just another stupid idea
-priority: today
+priority: this week
 assigned_to: Oleh Khomey
 status: opened
 created_at: 2009-11-01 15:31:25.273894 +02:00
-modified_at: 2009-11-03 19:56:39.311384 +02:00
+modified_at: 2009-11-03 19:57:10.760082 +02:00
 comments: 
 - !ruby/struct:Ampoule::Comment 
   author: Oleg Andreev
@@ -71,4 +71,14 @@ comments:
   - !ruby/struct:Ampoule::Attachment 
     name: queavatar.psd
     local_filename: 3a3e0de27f0e39dbe86f81472cd8f59d.psd
+    size: 139107
+- !ruby/struct:Ampoule::Comment 
+  author: Oleh Khomey
+  date: 2009-11-03 19:57:10.765496 +02:00
+  status: 
+  body: 4567456  dtddddddh56 thd ty d
+  attachments: 
+  - !ruby/struct:Ampoule::Attachment 
+    name: queavatar.psd
+    local_filename: 6d52e8a3b95be48229ebc209d22d1ede.psd
     size: 139107
