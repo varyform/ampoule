@@ -41,7 +41,7 @@
 # We use only stdlib here to avoid infinite gem requirements
 $KCODE = 'UTF8'
 require 'webrick'
-require 'CGI'
+require 'cgi'
 require 'jcode'
 require 'thread'
 require 'yaml'
@@ -885,6 +885,7 @@ module Ampoule
 
         h1 ".index-title" do
           input {
+            background    "#fff"
             border        "1px solid #fff"
             width         "70%"
             margin_left   -1.px # compensation for the 1px border
@@ -951,6 +952,7 @@ module Ampoule
                 opacity 0
                 height "100%"
                 outline_style :none
+                cursor :pointer
               end
             end
             
