@@ -1,10 +1,10 @@
 --- !ruby/struct:Ampoule::Task 
-title: test ampoule
+title: test enctype = multipart/form-data
 priority: today
-assigned_to: Yurii Rashkovskii
+assigned_to: nobody
 status: opened
 created_at: 2009-11-02 18:11:23.502681 +01:00
-modified_at: 2009-11-03 09:50:00.438265 +01:00
+modified_at: 2009-11-03 12:14:16.755710 +01:00
 comments: 
 - !ruby/struct:Ampoule::Comment 
   author: Yurii Rashkovskii
@@ -26,3 +26,51 @@ comments:
   date: 2009-11-03 09:50:00.440714 +01:00
   status: 
   body: 2 sec for push and 3 for pull
+- !ruby/struct:Ampoule::Comment 
+  author: Oleg Andreev
+  date: 2009-11-03 11:42:34.077692 +01:00
+  status: 
+  body: new actors test
+- !ruby/struct:Ampoule::Comment 
+  author: Oleg Andreev
+  date: 2009-11-03 11:44:18.211515 +01:00
+  status: 
+  body: |
+    Warning: fetch updated the current branch head.
+    Warning: fast forwarding your working tree from
+    Warning: commit c036248ebbb5d66a7d6af8b596a33dbb559736a7.
+    Your configuration specifies to merge the ref 'ampoule-tasks' from the
+    remote, but no such ref was fetched.
+
+- !ruby/struct:Ampoule::Comment 
+  author: Oleg Andreev
+  date: 2009-11-03 11:59:03.366019 +01:00
+  status: 
+  body: |
+    test less verbose output
+
+- !ruby/struct:Ampoule::Comment 
+  author: Oleg Andreev
+  date: 2009-11-03 12:01:31.812885 +01:00
+  status: assigned to Oleg Andreev
+  body: test stderr
+- !ruby/struct:Ampoule::Comment 
+  author: Oleg Andreev
+  date: 2009-11-03 12:10:45.532283 +01:00
+  status: "assigned to "
+  body: ""
+- !ruby/struct:Ampoule::Comment 
+  author: Oleg Andreev
+  date: 2009-11-03 12:12:59.948841 +01:00
+  status: 
+  body: test2
+- !ruby/struct:Ampoule::Comment 
+  author: Oleg Andreev
+  date: 2009-11-03 12:13:43.031255 +01:00
+  status: 
+  body: test3
+- !ruby/struct:Ampoule::Comment 
+  author: Oleg Andreev
+  date: 2009-11-03 12:14:16.761649 +01:00
+  status: 
+  body: file upload test
