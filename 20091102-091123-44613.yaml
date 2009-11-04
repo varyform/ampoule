@@ -4,7 +4,7 @@ priority: today
 assigned_to: Oleh Khomey
 status: opened
 created_at: 2009-11-02 19:11:23.502681 +02:00
-modified_at: 2009-11-03 19:58:03.944425 +02:00
+modified_at: 2009-11-04 14:30:37.112081 +02:00
 comments: 
 - !ruby/struct:Ampoule::Comment 
   author: Yurii Rashkovskii
@@ -98,3 +98,13 @@ comments:
   body: file upload test
   attachments: []
 
+- !ruby/struct:Ampoule::Comment 
+  author: Oleh Khomey
+  date: 2009-11-04 14:30:37.118967 +02:00
+  status: 
+  body: ""
+  attachments: 
+  - !ruby/struct:Ampoule::Attachment 
+    name: 1782.jpeg
+    local_filename: 2b0abec9fc3e17fdfb06adfa9db4368b.jpeg
+    size: 16036
